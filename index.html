@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCATION</title>
+    <style>
+        #loginForm {
+            display: none;
+        }
+        #invalidMessage {
+            color: red;
+            display: none;
+        }
+    </style>
+    <script>
+        let Punjab = "Punjab";
+        let PUNJAB = "PUNJAB";
+        let punjab = "punjab";
+        let CHANDIGARH = "CHANDIGARH";
+        let chandigarh = "chandigarh";
+        let Chandigarh = "Chandigarh";
+        function locationPrompt(){
+        const userLocation = prompt('Enter yout Location : ');
+        checkLocation(userLocation);}
+        function checkLocation(userLocation){
+        if (userLocation !== null && (userLocation == Punjab || userLocation == punjab || userLocation == PUNJAB || userLocation == chandigarh ||userLocation == Chandigarh || userLocation == CHANDIGARH)) {
+        console.log(`Hello, ${userLocation}!`);
+        alert("HI LOGED IN");
+        document.getElementById("loginForm").style.display = "block";
+        document.getElementById("invalidMessage").style.display = "none";
+        } else { 
+        alert("Can not Login Invalid Location. !");
+        document.getElementById("invalidMessage").style.display = "block";
+        document.getElementById("loginForm").style.display = "none";
+        }}
+    </script>
+</head>
+<body>
+    <header>
+        <H1>Location Check Assignment</H1>
+        <button onclick="locationPrompt()"><h2>CLiCK TO LOGIN</h2></button>
+    </header>
+    <div id="loginForm">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
